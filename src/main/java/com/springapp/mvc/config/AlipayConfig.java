@@ -49,7 +49,7 @@ public class AlipayConfig {
 
 
 
-	public static String PAY_URL_PREFFIX="http://localhost:8080/new";
+	public static String PAY_URL_PREFFIX="http://localhost:8080/codeTest";
 
 	private static String ALI_WAP_PAY_RETURN_URL_SUFFIX = "/pay/return.html";
 
