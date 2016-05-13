@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/img" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/annotations/AnnotationExample.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/annotations/AnnotationParse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/annotations/MethodInfo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/mvc/AliPayTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/mvc/AlipayCore.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/mvc/AppTests.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/mvc/HelloClient.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/mvc/HelloServer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/mvc/WechatPublicPay.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/mytest/Client.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/mytest/JavaScript.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/mytest/ListMemory.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/mytest/MemoryLeak.java" charset="UTF-8" />
+  </component>
+</project>
