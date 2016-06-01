@@ -14,6 +14,8 @@ public class LamdaTest {
         thread();
         filterTest();
         filterList();
+        map();
+        reduce();
 
     }
 
@@ -46,7 +48,7 @@ public class LamdaTest {
         map.put("bb", "22");
         map.put("cc", "33");
         //map不能为null
-        map.forEach((k,v)-> {
+        map.forEach((k, v) -> {
             System.out.println(k + "--" + v);
         });
 
@@ -86,7 +88,7 @@ public class LamdaTest {
         filter(languages, (str)->false);
 
         System.out.println("Print language whose length greater than 4:");
-        filter(languages, (str) -> ((String)str).length() > 4);
+        filter(languages, (str) -> ((String) str).length() > 4);
     }
 
     public static void filter(List<String> names, Predicate condition) {
@@ -109,5 +111,32 @@ public class LamdaTest {
                 .collect(Collectors.toList());
         System.out.printf("Original List : %s, filtered list : %s %n",
                 strList, filtered);
+    }
+
+    public static void map() {
+        List<Integer> costBeforeTax = Arrays.asList(100, 200, 300, 400, 500);
+        for (Integer cost : costBeforeTax) {
+            double price = cost + .12*cost;
+            System.out.println(price);
+        }
+
+        List<Integer> ncostBeforeTax = Arrays.asList(100, 200, 300, 400, 500);
+        ncostBeforeTax.stream().map((cost) -> cost + .12*cost).forEach(System.out::println);
+    }
+
+    public static void reduce() {
+        List<Integer> costBeforeTax = Arrays.asList(100, 200, 300, 400, 500);
+        double total = 0;
+        for (Integer cost : costBeforeTax) {
+            double price = cost + .12*cost;
+            total = total + price;
+        }
+        System.out.println("Total : " + total);
+
+        // New way:
+        List<Integer> ncostBeforeTax = Arrays.asList(100, 200, 300, 400, 500);
+        double bill = ncostBeforeTax.stream().map((cost) -> cost + .12*cost).reduce((sum, cost) -> sum
+                + cost).get();
+        System.out.println("Total : " + bill);
     }
 }
