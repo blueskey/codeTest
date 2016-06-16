@@ -1,4 +1,4 @@
-package rule;
+package rule.construction;
 
 /**
  * Created by Administrator on 2016/6/15 0015.

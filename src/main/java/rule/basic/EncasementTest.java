@@ -1,4 +1,4 @@
-package rule;
+package rule.basic;
 
 /**
  * Created by Administrator on 2016/6/14 0014.

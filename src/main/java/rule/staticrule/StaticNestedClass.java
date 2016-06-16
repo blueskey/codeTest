@@ -1,7 +1,4 @@
-package rule;
-
-import java.util.ArrayList;
-import java.util.List;
+package rule.staticrule;
 
 /**
  * Created by Administrator on 2016/6/15 0015.

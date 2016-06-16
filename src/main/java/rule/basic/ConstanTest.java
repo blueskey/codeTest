@@ -1,4 +1,4 @@
-package rule;
+package rule.basic;
 
 import java.util.Random;
 

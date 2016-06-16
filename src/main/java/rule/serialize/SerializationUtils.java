@@ -1,4 +1,4 @@
-package rule;
+package rule.serialize;
 
 import java.io.*;
 

@@ -20,6 +20,10 @@ public class AnonymityClass {
         System.out.println(list1.getClass() == list2.getClass());//false
         System.out.println(list.getClass() == list2.getClass());//false ，虽然父类相同，但类还是不同的
 
+        /**
+         * 匿名类的构造函数特殊处理机制：一般类（具有显式名字的类）的所有构造函数默认都是调用父类的无参构造，
+         * 而匿名类因为没有名字，只能由构造代码块代替，也是说无所谓有参无参，它在初始化时调用了的类的同参构造，然后再调用自己的构造代码块。
+         */
         Calulator calulator = new Calulator(1, 3){
             {
                 setOperator(Ops.ADD);
@@ -29,6 +33,7 @@ public class AnonymityClass {
 
     }
 }
+
 
 enum Ops{ADD, SUB}
 

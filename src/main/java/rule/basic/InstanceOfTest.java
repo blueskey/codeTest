@@ -1,9 +1,10 @@
-package rule;
+package rule.basic;
 
 import java.util.Date;
 
 /**
  * Created by Administrator on 2016/6/14 0014.
+ * 避免instanceof非预期结果
  */
 public class InstanceOfTest {
     public static void main(String[] args) {
