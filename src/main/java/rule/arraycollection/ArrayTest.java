@@ -41,6 +41,11 @@ public class ArrayTest {
         Integer[] data2 = {1, 2, 3, 4, 5};
         List list2 = Arrays.asList(data2);
         System.out.println(list2.size()+"----------"+ list2.get(0).getClass() );
+
+        //asList方法产生的List对象不可更改
+        //List list2 = Arrays.asList(data2);这里返回的ArrayList不是java.util.ArrayList，而是Arrays的一个静态私有内部类:它没有提供add方法
+        //这个ArrayList只提供了：size,toArray,get,set,contains方法。即它只是数组的一个外壳，不再保持列表动态变长的特性
+        list2.add(6);//Exception in thread "main" java.lang.UnsupportedOperationException
     }
 
     public static void main(String[] args) {
