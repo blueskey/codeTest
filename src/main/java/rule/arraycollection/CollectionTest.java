@@ -22,7 +22,7 @@ public class CollectionTest {
         strs.add("a");
         strs.add("asd");
 
-        Vector<String> str2 = new Vector<>();
+        Vector<String> str2 = new Vector<String>();
         str2.add("a");
         str2.add("asd");
         //列表相等只需关心元素数据
@@ -54,7 +54,7 @@ public class CollectionTest {
       */
     public static void subRemov() {
         List<Integer> integers = Collections.nCopies(100, 0);
-        ArrayList<Integer> list = new ArrayList<>(integers);
+        ArrayList<Integer> list = new ArrayList<Integer>(integers);
         list.subList(20, 30).clear();
     }
 

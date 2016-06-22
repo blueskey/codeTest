@@ -2,10 +2,14 @@ package com.springapp.mvc.controller;
 
 import com.google.common.collect.Lists;
 import com.springapp.mvc.domain.UserDo;
+import common.result.common.CommonResultCode;
+import common.result.common.JsonResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import sign.Sign;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -27,12 +31,19 @@ public class HelloController {
 		userDos.add(userDo2);
 		userDos.add(userDo3);
 		userDos.add(userDo4);
-		model.put("userDos",userDos);
+		model.put("userDos", userDos);
 
 		Map<String, UserDo> userDoMap = new HashMap<String, UserDo>();
 		userDoMap.put(userDo1.getName(), userDo1);
 		userDoMap.put(userDo2.getName(), userDo2);
-		model.put("userDoMap",userDoMap);
+		model.put("userDoMap", userDoMap);
 		return "hello";
+	}
+
+	@RequestMapping(value = "/hello/test.json")
+	@ResponseBody
+	@Sign
+	public JsonResult testSign() {
+		return new JsonResult(CommonResultCode.SUCCESS);
 	}
 }
