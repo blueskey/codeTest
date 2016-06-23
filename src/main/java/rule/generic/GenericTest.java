@@ -11,7 +11,9 @@ import java.util.List;
  * instanceof不允许存在泛型参数
  */
 public class GenericTest {
-
+    static {
+        System.out.println("Do GenericTest static code ....");
+    }
 }
 
 class Foo {
