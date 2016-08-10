@@ -138,7 +138,16 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.1.4</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.3.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus</artifactId>
+            <version>3.0.1</version>
+        </dependency>
     </dependencies>
 
     <build>
