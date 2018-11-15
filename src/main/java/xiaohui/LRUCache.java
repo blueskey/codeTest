@@ -3,6 +3,7 @@ package xiaohui;
 import java.util.HashMap;
 
 /**
+ * LRU　最不经常使用
  * Created by Administrator on 2018/11/15.
  */
 public class LRUCache {

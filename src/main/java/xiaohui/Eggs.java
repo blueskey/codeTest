@@ -5,35 +5,25 @@ package xiaohui;
  */
 public class Eggs {
 
-	public
+	public static void main(String [] args) {
 
-	static void main(String
-			[] args) {
+		Eggs e = new Eggs();
 
-		Eggs e = new
-
-				Eggs();
-
-		System.
-				out.println(e.getMinSteps(5, 500));
+		System. out.println(e.getMinSteps(3, 100));
 	}
 
 	public int getMinSteps(int eggNum, int floorNum) {
 
 		if (eggNum < 1 || floorNum < 1) {
 
-			return
-
-					0;
+			return 	0;
 		}
 
 		//备忘录，存储eggNum个鸡蛋，floorNum层楼条件下的最优化尝试次数
 
-		int
-				[][] cache = new
+		int 	[][] cache = new
 
-				int
-				[eggNum + 1][floorNum + 1];
+				int [eggNum + 1][floorNum + 1];
 
 		//把备忘录每个元素初始化成最大的尝试次数
 
