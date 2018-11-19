@@ -4,28 +4,15 @@ package xiaohui;
  * Created by Administrator on 2018/11/7.
  */
 public class Eggs {
-
-	public static void main(String [] args) {
-
+	public static void main(String[] args) {
 		Eggs e = new Eggs();
-
-		System. out.println(e.getMinSteps(3, 100));
+		System.out.println(e.getMinSteps(3, 100));
 	}
 
 	public int getMinSteps(int eggNum, int floorNum) {
-
-		if (eggNum < 1 || floorNum < 1) {
-
-			return 	0;
-		}
-
-		//备忘录，存储eggNum个鸡蛋，floorNum层楼条件下的最优化尝试次数
-
-		int 	[][] cache = new
-
-				int [eggNum + 1][floorNum + 1];
-
-		//把备忘录每个元素初始化成最大的尝试次数
+		if(eggNum < 1 || floorNum < 1)
+			return 0; /*备忘录，存储eggNum个鸡蛋，floorNum层楼条件下的最优化尝试次数*/
+		int[][] cache = new int[eggNum + 1][floorNum + 1]; //把备忘录每个元素初始化成最大的尝试次数
 
 		for (int i = 1; i <= eggNum; i++) {
 
@@ -42,8 +29,7 @@ public class Eggs {
 					//扔鸡蛋的楼层从1到m枚举一遍，如果当前算出的尝试次数小于上一次算出的尝试次数，则取代上一次的尝试次数。
 
 					//这里可以打印k的值，从而知道第一个鸡蛋是从第几次扔的。
-					cache[n][m] = Math.min(cache[n][m],
-							1 + Math.max(cache[n - 1][k - 1], cache[n][m - k]));
+					cache[n][m] = Math.min(cache[n][m], 1 + Math.max(cache[n - 1][k - 1], cache[n][m - k]));
 				}
 			}
 		}

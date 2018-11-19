@@ -4,33 +4,16 @@ package xiaohui;
  * Created by Administrator on 2018/11/7.
  */
 public class EggsOptimized {
-
 	public static void main(String[] args) {
-
 		EggsOptimized e = new EggsOptimized();
-
 		System.out.println(e.getMinSteps(5, 500));
 	}
 
 	public int getMinSteps(int eggNum, int floorNum) {
-
-		if(eggNum < 1 || floorNum < 1) {
-
-			return 0;
-		}
-
-		//上一层备忘录，存储鸡蛋数量-1的floorNum层楼条件下的最优化尝试次数
-
-		int[] preCache = new
-
-				int
-				[floorNum + 1];
-
-		//当前备忘录，存储当前鸡蛋数量的floorNum层楼条件下的最优化尝试次数
-
-		int[] currentCache = new
-
-				int[floorNum + 1];
+		if(eggNum < 1 || floorNum < 1)
+			return 0; /*上一层备忘录，存储鸡蛋数量-1的floorNum层楼条件下的最优化尝试次数*/
+		int[] preCache = new int[floorNum + 1]; /*当前备忘录，存储当前鸡蛋数量的floorNum层楼条件下的最优化尝试次数*/
+		int[] currentCache = new int[floorNum + 1];
 
 		//把备忘录每个元素初始化成最大的尝试次数
 
