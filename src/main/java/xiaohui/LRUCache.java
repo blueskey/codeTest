@@ -3,13 +3,11 @@ package xiaohui;
 import java.util.HashMap;
 
 /**
- * LRU　最不经常使用
- * Created by Administrator on 2018/11/15.
+ * LRU　最不经常使用 Created by Administrator on 2018/11/15.
  */
 public class LRUCache {
 	private Node head;
-	private Node end;
-	//缓存存储上限
+	private Node end;/*缓存存储上限*/
 	private int limit;
 	private HashMap<String, Node> hashMap;
 
@@ -34,17 +32,15 @@ public class LRUCache {
 
 	public String get(String key) {
 		Node node = hashMap.get(key);
-		if(node == null) {
+		if(node == null)
 			return null;
-		}
 		refreshNode(node);
 		return node.value;
 	}
 
-	public void put(String key, String value){
+	public void put(String key, String value) {
 		Node node = hashMap.get(key);
-		if(node == null) {
-			//如果key不存在，插入key-value
+		if(node == null) {/*如果key不存在，插入key-value*/
 			if(hashMap.size() >= limit) {
 				String oldKey = removeNode(head);
 				hashMap.remove(oldKey);
@@ -52,8 +48,7 @@ public class LRUCache {
 			node = new Node(key, value);
 			addNode(node);
 			hashMap.put(key, node);
-		} else {
-			//如果key存在，刷新key-value
+		} else {/*如果key存在，刷新key-value*/
 			node.value = value;
 			refreshNode(node);
 		}
@@ -66,36 +61,20 @@ public class LRUCache {
 	}
 
 	/**
-	 * 刷新被访问的节点位置
-	 *
-	 * @param node 被访问的节点
+	 * 刷新被访问的节点位置 @param node 被访问的节点
 	 */
-	private void refreshNode(Node node) {
-		//如果访问的是尾节点，无需移动节点
-		if(node == end) {
-			return;
-		}
-		//移除节点
-		removeNode(node);
-		//重新插入节点
+	private void refreshNode(Node node) {/*如果访问的是尾节点，无需移动节点*/
+		if(node == end)
+			return;/*移除节点*/
+		removeNode(node);/*重新插入节点*/
 		addNode(node);
 	}
 
 	/**
-	 * 删除节点
-	 *
-	 * @param node 要删除的节点
+	 * 删除节点 @param node 要删除的节点
 	 */
-
 	private String removeNode(Node node) {
-		if(node == end) {
-			//移除尾节点
-			end = end.pre;
-		} else if(node == head) {
-			//移除头节点
-			head = head.next;
-		} else {
-			//移除中间节点
+		if(node == end) {/*移除尾节点*/end = end.pre;} else if(node == head) {/*移除头节点*/head = head.next;} else {/*移除中间节点*/
 			node.pre.next = node.next;
 			node.next.pre = node.pre;
 		}
@@ -103,9 +82,7 @@ public class LRUCache {
 	}
 
 	/**
-	 * 尾部插入节点
-	 *
-	 * @param node 要插入的节点
+	 * 尾部插入节点 @param node 要插入的节点
 	 */
 	private void addNode(Node node) {
 		if(end != null) {
@@ -114,9 +91,8 @@ public class LRUCache {
 			node.next = null;
 		}
 		end = node;
-		if(head == null) {
+		if(head == null)
 			head = node;
-		}
 	}
 
 	class Node {
