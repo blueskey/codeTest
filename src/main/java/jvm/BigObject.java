@@ -17,5 +17,6 @@ public class BigObject {
     public static void main(String[] args) {
         byte[] allocation;
         allocation = new byte[4 * _1MB];
+
     }
 }
