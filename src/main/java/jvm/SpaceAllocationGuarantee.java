@@ -1,5 +1,10 @@
 package jvm;
 
+import com.google.common.base.Joiner;
+import com.google.common.collect.Sets;
+
+import java.util.Set;
+
 /**
  * Created by Administrator on 2016/7/18 0018.
  * 空间分配担保
@@ -23,19 +28,36 @@ public class SpaceAllocationGuarantee {
      * @param args
      */
     public static void main(String[] args) {
-        byte[] allocation1,allocation2,allocation3,allocation4,allocation5,allocation6,allocation7;
-        allocation1 = new byte[2 * _1MB];
-        allocation2 = new byte[4 * _1MB];
-        allocation3 = new byte[4 * _1MB];
-        allocation1 = null;
-        allocation4 = new byte[2 * _1MB];
-        allocation5 = new byte[2 * _1MB];
-        allocation6 = new byte[2 * _1MB];
-        allocation4 = null;
-        allocation5 = null;
-        allocation6 = null;
+		byte[] allocation1, allocation2, allocation3, allocation4, allocation5, allocation6, allocation7;
+		allocation1 = new byte[2 * _1MB];
+		allocation2 = new byte[4 * _1MB];
+		allocation3 = new byte[4 * _1MB];
+		allocation1 = null;
+		allocation4 = new byte[2 * _1MB];
+		allocation5 = new byte[2 * _1MB];
+		allocation6 = new byte[2 * _1MB];
+		allocation4 = null;
+		allocation5 = null;
+		allocation6 = null;
 
-        allocation7 = new byte[2 * _1MB];
-    }
+		allocation7 = new byte[2 * _1MB];
+
+		Set<Long> set = Sets.newHashSet();
+		set.add(32353654L);
+		set.add(32353654L);
+		set.add(32353654L);
+		set.add(32353654L);
+		set.add(342L);
+		for (Long lo : set)
+			System.out.println(lo);
+
+		Set<String> strings = Sets.newHashSet();
+		strings.add("dfd");
+		strings.add("aa");
+		strings.add("bb");
+		strings.add("cc");
+		System.out.println(Joiner.on(",").join(strings));
+	}
 
 }
+
