@@ -1,5 +1,8 @@
 package lambda;
 
+import com.google.common.base.Joiner;
+import com.google.common.base.Splitter;
+
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -17,6 +20,14 @@ public class LamdaTest {
         map();
         reduce();
         System.out.println("一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十".length());
+
+//        String s = "http://xl-upload-prod.oss-cn-shenzhen.aliyuncs.com/upload/0/190612/0/1560326786844595033.jpg,http://xl-upload-prod.oss-cn-shenzhen.aliyuncs.com/upload/0/190612/0/1560326786880352996.jpg,http://xl-upload-prod.oss-cn-shenzhen.aliyuncs.com/upload/0/190612/0/1560326786913402311.jpg,http://xl-upload-prod.oss-cn-shenzhen.aliyuncs.com/upload/0/190612/0/1560326786938781213.jpg,";
+        String s = "http://rs.380star.com/tomcat/0/180412/0/1523498464495766162.jpg,,,http://rs.380star.com/tomcat/0/180412/0/1523498464495766162.jpg,,,,,";
+        Iterable i= Splitter.on(',').trimResults().omitEmptyStrings().split(s);
+
+        if(null != i) {
+            System.out.println(Joiner.on(",").join(i));
+        }
 
     }
 

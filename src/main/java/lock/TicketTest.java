@@ -44,7 +44,7 @@ public class TicketTest {
 //		}
 
 			synchronized (this) {
-				while (count >0) {
+				while (true&count >0) {
 					System.out.println(name + "卖掉第 " + count-- + " 张票");
 				}
 			}
