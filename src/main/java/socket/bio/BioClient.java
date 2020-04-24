@@ -7,11 +7,18 @@ public class BioClient {
 
 	public static void main(String[] args) throws Exception {
 
-		Socket socket = new Socket("localhost", 8100);
+		Socket socket = new Socket("localhost", 8081);
+		byte[] in = new byte[1024];
+		byte[] out = new byte[1024];
 
 		while (true) {
+
+			socket.getInputStream().read(in);
+			System.out.println("server:" + new String(in));
+
 			InputStream inputStream = System.in;
-			socket.getOutputStream().write(new byte[1024]);
+			int n=inputStream.read(out);
+			socket.getOutputStream().write(out);
 
 		}
 	}

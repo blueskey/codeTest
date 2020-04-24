@@ -12,17 +12,19 @@ public class IoReadWrite implements Runnable {
 	}
 
 	@Override public void run() {
-
+		byte[] data = new byte[1024];
 		try {
-			System.out.println("服务器接收到数据："+socket.getInputStream().read(new byte[1024]));
+			socket.getOutputStream().write(("您好，欢迎连接"+"\n").getBytes());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		try {
-			socket.getOutputStream().write("hello".getBytes());
-		} catch (IOException e) {
-			e.printStackTrace();
+		while (true) {
+			try {
+				socket.getInputStream().read(data);
+				System.out.println("服务器接收到数据："+new String(data));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 
 	}
