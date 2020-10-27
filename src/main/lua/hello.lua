@@ -4,3 +4,4 @@
 --- DateTime: 2018/11/29 11:38
 ---
 print("hello lua".._VERSION)
+print("hello lua".."hello")
